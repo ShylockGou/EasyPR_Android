@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Shylock/Workspaces/Android/noopu/EasyPR_Android/app/build/intermediates/exploded-aar/EasyPR_Android/openCVLibrary249/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3273cf6ef10d2c932a9603653b163c2a27b2e194">
+        <dex dex="/Users/Shylock/Workspaces/Android/noopu/EasyPR_Android/app/build/intermediates/pre-dexed/debug/classes-f240cf94577331985e2b69d76dadaea676335344.jar" />
+    </item>
+
+</items>
