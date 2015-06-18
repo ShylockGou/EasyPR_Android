@@ -3,3 +3,5 @@
 .gradletasknamecache
 .idea/*
 build/*
+build
+build/intermediates
