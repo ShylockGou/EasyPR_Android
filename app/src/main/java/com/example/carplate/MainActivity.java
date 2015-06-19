@@ -15,13 +15,11 @@ import android.widget.TextView;
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
-import org.opencv.ml.EM;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 
 public class MainActivity extends Activity {
     public static final String SVM_XML = "svm.xml";
@@ -35,7 +33,8 @@ public class MainActivity extends Activity {
     private Bitmap bmp = null;
     private TextView m_text = null;
     private String path = null;
-    public static int index = 6;
+    public static int index = 0;
+
     static {
         if (!OpenCVLoader.initDebug()) {
         } else {
@@ -119,13 +118,16 @@ public class MainActivity extends Activity {
         }
     };
 
-    public void click(View view)  {
+    public void click(View view) {
 
         try {
             index = index > num ? 0 : ++index;
             bmp = BitmapFactory.decodeFile(imgpath[index]);
             imageView.setImageBitmap(bmp);
             System.out.println("entering the jni");
+            if (imgpath[index] == null || svmpath == null || annpath == null) {
+                throw new NullPointerException("空!!");
+            }
             byte[] resultByte = CarPlateDetection.ImageProc(imgpath[index], svmpath, annpath);
             String result = new String(resultByte, "UTF-8");
             System.out.println(result);
